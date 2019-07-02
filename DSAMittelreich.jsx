@@ -5,18 +5,18 @@ import { withRouter } from 'react-router-dom'
 import queryString from 'query-string'
 
 import { DSAGrid, DSAGridItem, DSAGridRow } from '../controls/DSAGrid';
-import DSAItemList from '../controls/DSAItemList';
 import DSASelect from '../controls/DSASelect'
 
 import {GenderChooser, NobilitySwitch} from './DSANameUtils';
+import RandomNameGenerator from './RandomNameGenerator';
 
 const styles = theme => ({
   root: {}
 });
 
 const REGIONS = [
-  {value: "garethien", label: "Garethien"},
-  {value: "horasreich", label: "Horasreich"},
+  {value: "Garethien", label: "Garethien"},
+  {value: "Horasreich", label: "Horasreich"},
 ]
 
 const Q_STR_FMT = {
@@ -36,47 +36,39 @@ function RegionChooser(props) {
 
 export class DSAMittelreich extends React.Component {
 
-  onGenderChange = (g) => {
+  onParameterChange = (name, value) => {
+    let values = queryString.parse(
+      this.props.location.search,
+      Q_STR_FMT);
+    values[name] = value;
     this.props.history.push({
-      search: '?gender=' + g
-    })
-  }
-
-  onNobilityChange = (n) => {
-    this.props.history.push({
-      search: '?nobility=' + n
-    })
-  }
-
-  onRegionChange = (r) => {
-    this.props.history.push({
-      search: '?region=' + r
-    })
+      search: queryString.stringify(values)
+    });
   }
 
   render() {
     const {classes, location, onNameChosen} = this.props;
     const values = queryString.parse(location.search, Q_STR_FMT);
     const {gender, nobility, region} = values;
-    const NAMES = ["A","B","C"];
-    const names = NAMES.map(n => { return {value: n};});
     return <div className={classes.root}>
       <DSAGrid className={classes.root}>
         <DSAGridItem lg={3} md={6} sm={12}>
           <DSAGrid>
             <RegionChooser
               region={region ? region : REGIONS[0].value}
-              onChange={this.onRegionChange} />
+              onChange={e => this.onParameterChange("region", e)} />
             <GenderChooser
               gender={gender ? gender : "x"}
-              onChange={this.onGenderChange} />
+              onChange={e => this.onParameterChange("gender", e)} />
             <NobilitySwitch
               nobility={nobility ? nobility : false}
-              onChange={this.onNobilityChange} />
+              onChange={e => this.onParameterChange("nobility", e)} />
           </DSAGrid>
         </DSAGridItem>
         <DSAGridItem lg={9} md={6} sm={12}>
-          <DSAItemList items={[ {title: "Mittelreich", items: names}]} />
+          <RandomNameGenerator
+            {...values}
+            onNameChosen={onNameChosen}/>
         </DSAGridItem>
       </DSAGrid>
     </div>

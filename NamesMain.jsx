@@ -6,6 +6,8 @@ import { Switch, Route } from "react-router-dom";
 
 import { DSAGrid, DSAGridRow } from '../controls/DSAGrid';
 import DSAInfoBox from '../controls/DSAInfoBox';
+import DSAItemList from '../controls/DSAItemList';
+import DSAButton from '../controls/DSAButton';
 
 import DSANameChooser from './DSANameChooser';
 import DSAMittelreich from './DSAMittelreich';
@@ -19,6 +21,23 @@ const styles = {
 
 const ROOT_PATH = "/names/"
 
+function NameHistory(props) {
+  const {history, onClear} = props;
+    if(history.length > 0) {
+      const items = history.map((n) => {
+        return { value: n }});
+      return <DSAGridRow>
+          <DSAInfoBox title="Ausgewählte Namen">
+            <DSAButton size="small" onClick={onClear}>löschen</DSAButton>
+            <DSAItemList items={items}/>
+          </DSAInfoBox>
+        </DSAGridRow>;
+    }
+    else {
+      return "";
+    }
+  }
+
 class NamesMain extends React.Component {
 
   state = {
@@ -26,7 +45,18 @@ class NamesMain extends React.Component {
   }
 
   addNameToHistory = (name) => {
+    this.setState(state => {
+      const history = [...state.history, name];
+      return {
+        history: history
+      };
+    });
+  }
 
+  clearHistory = () => {
+    this.setState({
+        history: []
+      });
   }
 
   render() {
@@ -61,6 +91,7 @@ class NamesMain extends React.Component {
               </Switch>
             </DSAInfoBox>
           </DSAGridRow>
+          <NameHistory history={this.state.history} onClear={this.clearHistory} />
         </DSAGrid>
       </main>;
   }
