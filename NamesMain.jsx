@@ -69,15 +69,195 @@ class NamesMain extends React.Component {
         label: "Mittelreich"
       },
       {
-        page: <div>lol 2</div>,
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "alanfa",
+        label: "Al'Anfa & Tiefer Süden"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "andergast",
+        label: "Andergast"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "aranien",
+        label: "Aranien"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "bornland",
+        label: "Bornland"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "nivesen",
+        label: "Nivesen"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "ferkina",
+        label: "Ferkinas"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "gjasker",
+        label: "Gjasker"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "horasreich",
+        label: "Horasreich"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "uthuria",
+        label: "Uthurische Modenamen"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "kemi",
+        label: "Kemi"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "maraskan",
+        label: "Maraskan"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "history",
+        label: "Historische Namen"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "nostria",
+        label: "Nostria"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "schattenlande",
+        label: "Schattenlande"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "selem",
+        label: "Selem"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "meer",
+        label: "Südmeer & Bukanier"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "svellttal",
+        label: "Svellttal"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "thalusien",
+        label: "Thalusien"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "thorwal",
+        label: "Thorwal"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "maraskan",
+        label: "Maraskan"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "trollzacker",
+        label: "Trollzacker"
+      },
+      {
+        page: <div>not yet implemented</div>,
         path: ROOT_PATH + "tulamidenlande",
-        label: "Tulamidenlande"
+        label: "Tulamidenlande & Kalifat"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "utulu",
+        label: "Waldmenschenstämme & Utulu"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "zahori",
+        label: "Zahori"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "zyklopeninseln",
+        label: "Zyklopeninseln"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "zwoelfgoetter",
+        label: "Zwölfgötternamen"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "echsen",
+        label: "Echsenmenschen"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "elfen",
+        label: "Elfen"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "elfen",
+        label: "Elfen"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "goblins",
+        label: "Golbins"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "oger",
+        label: "Oger"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "grolme",
+        label: "Grolme"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "orks",
+        label: "Orks"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "trolle",
+        label: "Trolle"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "zwerge",
+        label: "Zwerge"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "kuenstler",
+        label: "Bühnen- & Künstlernamen"
+      },
+      {
+        page: <div>not yet implemented</div>,
+        path: ROOT_PATH + "magier",
+        label: "Magier- & Weihennamen"
       }
     ];
 
     const OPTIONS = NAMES.map(a => {
       return {value: a.path, label: a.label};
-    });
+    }).sort((l,r) => l.label.localeCompare(r.label));
 
     return <main className={classes.root}>
         <DSAGrid>

@@ -18,15 +18,12 @@ function generateNames(...args) {
 }
 
 function getGender(a, gender) {
-  let names = [];
   if(!gender || gender === "x") {
-    names = a.w;
-    names.push(...a.m);
+    return a.w.concat(a.m);
   }
   else {
-    names = a[gender];
+    return a[gender];
   }
-  return names;
 }
 
 export default function RandomNameGenerator(props) {

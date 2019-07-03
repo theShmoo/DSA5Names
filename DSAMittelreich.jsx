@@ -15,9 +15,21 @@ const styles = theme => ({
 });
 
 const REGIONS = [
-  {value: "Garethien", label: "Garethien"},
-  {value: "Horasreich", label: "Horasreich"},
-]
+  "Albernia",
+  "Almada",
+  "Garethien",
+  "Greifenfurt",
+  "Kosch",
+  "Nordmarken",
+  "Perricum",
+  "Rabenmark",
+  "Rommilyser Mark",
+  "Sonnenmark",
+  "Tobrien",
+  "Warunk",
+  "Weiden",
+  "Windhag"
+].sort();
 
 const Q_STR_FMT = {
   parseNumbers: true,
@@ -26,8 +38,9 @@ const Q_STR_FMT = {
 
 function RegionChooser(props) {
   const {region, onChange} = props;
+  const options = REGIONS.map(a => {return {value: a, label: a}})
   return <DSAGridRow>
-    <DSASelect options={REGIONS}
+    <DSASelect options={options}
       label="Region"
       value={region}
       onChange={(e) => onChange(e.value)} />
@@ -55,7 +68,7 @@ export class DSAMittelreich extends React.Component {
         <DSAGridItem lg={3} md={6} sm={12}>
           <DSAGrid>
             <RegionChooser
-              region={region ? region : REGIONS[0].value}
+              region={region ? region : REGIONS[0]}
               onChange={e => this.onParameterChange("region", e)} />
             <GenderChooser
               gender={gender ? gender : "x"}
