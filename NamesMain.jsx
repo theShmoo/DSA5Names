@@ -16,6 +16,7 @@ import DSANormalNames from './DSANormalNames';
 import {Aranien} from './DSANamesAranien';
 import {Nivesen} from './DSANamesNivesen';
 import {Norbaden} from './DSANamesNorbaden';
+import {Nostria} from './DSANamesNostria';
 
 
 const styles = {
@@ -139,7 +140,7 @@ class NamesMain extends React.Component {
         label: "Historische Namen"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Nostria} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "nostria",
         label: "Nostria"
       },

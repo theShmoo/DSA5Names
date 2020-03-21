@@ -13,10 +13,15 @@ const styles = theme => ({
   root: {}
 });
 
+const Q_STR_FMT = {
+  parseNumbers: true,
+  parseBooleans: true,
+}
+
 function DSANormalNames(props) {
 
   const onParameterChange = (name, value) => {
-    let values = queryString.parse(props.location.search);
+    let values = queryString.parse(props.location.search, Q_STR_FMT);
     values[name] = value;
     props.history.push({
       search: queryString.stringify(values)
@@ -24,7 +29,7 @@ function DSANormalNames(props) {
   }
 
   const {classes, onNameChosen, location, names} = props;
-  const values = queryString.parse(location.search);
+  const values = queryString.parse(location.search, Q_STR_FMT);
   const {gender, nobility} = values;
   const has_nobility = names.nobility !== undefined;
   return <DSAGrid className={classes.root}>
