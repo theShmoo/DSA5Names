@@ -11,6 +11,11 @@ import DSAButton from '../controls/DSAButton';
 
 import DSANameChooser from './DSANameChooser';
 import DSAMittelreich from './DSAMittelreich';
+import DSANormalNames from './DSANormalNames';
+
+import {Aranien} from './DSANamesAranien';
+import {Nivesen} from './DSANamesNivesen';
+import {Norbaden} from './DSANamesNorbaden';
 
 
 const styles = {
@@ -79,7 +84,7 @@ class NamesMain extends React.Component {
         label: "Andergast"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Aranien} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "aranien",
         label: "Aranien"
       },
@@ -89,9 +94,14 @@ class NamesMain extends React.Component {
         label: "Bornland"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Nivesen} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "nivesen",
         label: "Nivesen"
+      },
+      {
+        page: <DSANormalNames names={Norbaden} onNameChosen={this.addNameToHistory} />,
+        path: ROOT_PATH + "norbaden",
+        label: "Norbaden"
       },
       {
         page: <div>not yet implemented</div>,
@@ -202,11 +212,6 @@ class NamesMain extends React.Component {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "echsen",
         label: "Echsenmenschen"
-      },
-      {
-        page: <div>not yet implemented</div>,
-        path: ROOT_PATH + "elfen",
-        label: "Elfen"
       },
       {
         page: <div>not yet implemented</div>,

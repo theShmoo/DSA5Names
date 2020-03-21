@@ -1,49 +1,79 @@
 import React from 'react';
 
 import DSAItemList from '../controls/DSAItemList';
-import {Garethien} from './DSANamesGarethien';
 
 import {getRandomElement} from '../utils/RandomUtils';
 
 const NUM_NAMES_TO_GENEREATE = 10;
-const VON_ZU = ["von", "zu"];
 
-function generateNames(...args) {
+function generateNames(args) {
     let names = []
     for(let i = 0; i < NUM_NAMES_TO_GENEREATE; ++i) {
-      const name = args.reduce((sum, a) => {sum += getRandomElement(a) + " "; return sum}, "");
+      const name = args.reduce((sum, a) => {
+        sum += getRandomElement(a.names) + a.sep;
+        return sum;
+      }, "");
       names.push(name);
     }
     return names;
 }
 
-function getGender(a, gender) {
+function getGender(part, gender) {
+  if(part.x) {
+    return part.x;
+  }
   if(!gender || gender === "x") {
-    return a.w.concat(a.m);
+    return part.w.concat(part.m);
   }
   else {
-    return a[gender];
+    return part[gender];
   }
 }
 
+function generatePart(part, gender) {
+  if(part)
+  {
+    let parts = []
+    if(part.prefix) {
+      parts.push({sep: "", names: getGender(part.prefix, gender)});
+    }
+    parts.push({sep: " ", names: getGender(part, gender)});
+    if(part.postfix) {
+      parts.push({sep: "", names: getGender(part.postfix, gender)});
+    }
+    return parts;
+  }
+  return undefined;
+}
+
 export default function RandomNameGenerator(props) {
-  const {gender, nobility, region, onNameChosen} = props;
+  const {gender, nobility, region, onNameChosen, names} = props;
   const nameRedirection = (n) => (e) => {
     onNameChosen(n);
   }
-  let names = [];
+  let n = [];
   if(!nobility) {
-    const sur = Garethien.normal.post;
-    const pre = getGender(Garethien.normal.pre, gender);
-    names = generateNames(pre, sur);
+    let parts = []
+    const pre = generatePart(names.normal.pre, gender);
+    if(pre) parts.push(...pre)
+    const second = generatePart(names.normal.second, gender);
+    if(second) parts.push(...second)
+    const post = generatePart(names.normal.post, gender);
+    if(post) parts.push(...post)
+    n = generateNames(parts);
   }
   else {
-    const pre = getGender(Garethien.nobility.pre, gender);
-    const second = getGender(Garethien.nobility.second, gender);
-    const sur = Garethien.nobility.post;
-    names = generateNames(pre, second, VON_ZU, sur);
+    let parts = []
+    const pre = names.nobility.pre ?
+      generatePart(names.nobility.pre, gender) :
+      generatePart(names.normal.pre, gender);
+    if(pre) parts.push(...pre)
+    const second = generatePart(names.nobility.second, gender);
+    if(second) parts.push(...second)
+    const post = generatePart(names.nobility.post, gender);
+    if(post) parts.push(...post)
+    n = generateNames(parts);
   }
-  const items = names.map(n => { return {value: n, action: nameRedirection(n)}});
-  const title = region ? region : "Garethien"
-  return <DSAItemList items={[ {title: title, items: items}]} />
+  const items = n.map(n => { return {value: n, action: nameRedirection(n)}});
+  return <DSAItemList items={[ {title: region, items: items}]} />
 }
