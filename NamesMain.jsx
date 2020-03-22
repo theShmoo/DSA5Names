@@ -17,6 +17,7 @@ import {Aranien} from './DSANamesAranien';
 import {Andergast} from './DSANamesAndergast';
 import {Bornland} from './DSANamesBornland';
 import {Grolme} from './DSANamesGrolme';
+import {Kemi} from './DSANamesKemi';
 import {Nivesen} from './DSANamesNivesen';
 import {Norbaden} from './DSANamesNorbaden';
 import {Nostria} from './DSANamesNostria';
@@ -126,7 +127,7 @@ class NamesMain extends React.Component {
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "gjasker",
-        label: "Gjasker"
+        label: "Gjaskerländer"
       },
       {
         page: <div>not yet implemented</div>,
@@ -139,7 +140,7 @@ class NamesMain extends React.Component {
         label: "Uthurische Modenamen (Dschuku, Nathani, Uthurisch)"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Kemi} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "kemi",
         label: "Kemi"
       },
