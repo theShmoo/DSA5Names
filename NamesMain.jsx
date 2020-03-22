@@ -20,6 +20,7 @@ import {Grolme} from './DSANamesGrolme';
 import {Nivesen} from './DSANamesNivesen';
 import {Norbaden} from './DSANamesNorbaden';
 import {Nostria} from './DSANamesNostria';
+import {Oger} from './DSANamesOger';
 import {Schattenlande} from './DSANamesSchattenlande';
 import {Selem} from './DSANamesSelem';
 import {Bukanier} from './DSANamesBukanier';
@@ -243,7 +244,7 @@ class NamesMain extends React.Component {
         label: "Golbins (Goblinisch)"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Oger} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "oger",
         label: "Oger (Ogrisch)"
       },
