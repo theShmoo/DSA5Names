@@ -23,6 +23,7 @@ import {Bukanier} from './DSANamesBukanier';
 import {Svellttal} from './DSANamesSvellttal';
 import {Thorwal} from './DSANamesThorwal';
 import {Trollzacker} from './DSANamesTrollzacker';
+import {Zahori} from './DSANamesZahori';
 
 
 const styles = {
@@ -201,7 +202,7 @@ class NamesMain extends React.Component {
         label: "Waldmenschenstämme & Utulu"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Zahori} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "zahori",
         label: "Zahori"
       },
