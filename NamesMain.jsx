@@ -24,6 +24,7 @@ import {Svellttal} from './DSANamesSvellttal';
 import {Thorwal} from './DSANamesThorwal';
 import {Trollzacker} from './DSANamesTrollzacker';
 import {Zahori} from './DSANamesZahori';
+import {Zyklopeninseln} from './DSANamesZyklopeninseln';
 
 
 const styles = {
@@ -207,7 +208,7 @@ class NamesMain extends React.Component {
         label: "Zahori"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Zyklopeninseln} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "zyklopeninseln",
         label: "Zyklopeninseln"
       },
