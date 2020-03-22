@@ -10,7 +10,9 @@ function generateNames(args) {
     let names = []
     for(let i = 0; i < NUM_NAMES_TO_GENEREATE; ++i) {
       const name = args.reduce((sum, a) => {
-        sum += getRandomElement(a.names) + a.sep;
+        if(a && a.names.length > 0) {
+          sum += getRandomElement(a.names) + a.sep;
+        }
         return sum;
       }, "");
       names.push(name);
@@ -19,61 +21,57 @@ function generateNames(args) {
 }
 
 function getGender(part, gender) {
-  if(part.x) {
-    return part.x;
-  }
+  let retval = []
   if(!gender || gender === "x") {
-    return part.w.concat(part.m);
+    if(part.m)
+      retval.push(...part.m);
+    if(part.w)
+      retval.push(...part.w);
   }
-  else {
-    return part[gender];
+  else if(part[gender]) {
+    retval.push(...part[gender]);
   }
+  if(part.x){
+    retval.push(...part.x);
+  }
+  return retval;
 }
 
-function generatePart(part, gender) {
-  if(part)
-  {
-    let parts = []
-    if(part.prefix) {
-      parts.push({sep: "", names: getGender(part.prefix, gender)});
-    }
-    parts.push({sep: " ", names: getGender(part, gender)});
-    if(part.postfix) {
-      parts.push({sep: "", names: getGender(part.postfix, gender)});
-    }
-    return parts;
+function generatePart(part, fallback, suffix, sep, gender) {
+  if(part && part[suffix]) {
+    return {sep: sep, names: getGender(part[suffix], gender)};
+  }
+  else if(fallback && fallback[suffix]){
+    return {sep: sep, names: getGender(fallback[suffix], gender)};
   }
   return undefined;
 }
 
-export default function RandomNameGenerator(props) {
-  const {gender, nobility, region, onNameChosen, names} = props;
+function generatePartWithSuffix(part, fallback, gender) {
+  return [
+    generatePart(part, fallback, "prefix", "", gender),
+    generatePart(part, fallback, "names", " ", gender),
+    generatePart(part, fallback, "postfix", "", gender)
+  ];
+}
+
+const PARTS = ["pre", "second", "post"];
+const fallback = "normal";
+
+const RandomNameGenerator = (props) => {
+  const {gender, region, onNameChosen, names, option} = props;
   const nameRedirection = (n) => (e) => {
     onNameChosen(n);
   }
-  let n = [];
-  if(!nobility) {
-    let parts = []
-    const pre = generatePart(names.normal.pre, gender);
-    if(pre) parts.push(...pre)
-    const second = generatePart(names.normal.second, gender);
-    if(second) parts.push(...second)
-    const post = generatePart(names.normal.post, gender);
-    if(post) parts.push(...post)
-    n = generateNames(parts);
-  }
-  else {
-    let parts = []
-    const pre = names.nobility.pre ?
-      generatePart(names.nobility.pre, gender) :
-      generatePart(names.normal.pre, gender);
-    if(pre) parts.push(...pre)
-    const second = generatePart(names.nobility.second, gender);
-    if(second) parts.push(...second)
-    const post = generatePart(names.nobility.post, gender);
-    if(post) parts.push(...post)
-    n = generateNames(parts);
-  }
-  const items = n.map(n => { return {value: n, action: nameRedirection(n)}});
+  const t = option ? option : fallback;
+  const parts = PARTS.map(part =>
+    generatePartWithSuffix(names[t][part], names[fallback][part], gender)
+  ).flat(1);
+  const generatedNames = generateNames(parts);
+  const items = generatedNames.map(n => {
+    return {value: n, action: nameRedirection(n)}
+  });
   return <DSAItemList items={[ {title: region, items: items}]} />
-}
+};
+
+export default RandomNameGenerator;

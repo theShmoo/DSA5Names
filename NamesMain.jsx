@@ -17,6 +17,11 @@ import {Aranien} from './DSANamesAranien';
 import {Nivesen} from './DSANamesNivesen';
 import {Norbaden} from './DSANamesNorbaden';
 import {Nostria} from './DSANamesNostria';
+import {Schattenlande} from './DSANamesSchattenlande';
+import {Selem} from './DSANamesSelem';
+import {Bukanier} from './DSANamesBukanier';
+import {Svellttal} from './DSANamesSvellttal';
+import {Thorwal} from './DSANamesThorwal';
 
 
 const styles = {
@@ -145,22 +150,22 @@ class NamesMain extends React.Component {
         label: "Nostria"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Schattenlande} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "schattenlande",
         label: "Schattenlande"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Selem} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "selem",
         label: "Selem"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Bukanier} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "meer",
         label: "Südmeer & Bukanier"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Svellttal} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "svellttal",
         label: "Svellttal"
       },
@@ -170,7 +175,7 @@ class NamesMain extends React.Component {
         label: "Thalusien"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Thorwal} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "thorwal",
         label: "Thorwal"
       },

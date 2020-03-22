@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { withRouter } from 'react-router-dom'
-import queryString from 'query-string'
 
-import { DSAGrid, DSAGridItem, DSAGridRow } from '../controls/DSAGrid';
-import DSASelect from '../controls/DSASelect'
+import { DSAGrid, DSAGridRow } from '../controls/DSAGrid';
+import DSASelect from '../controls/DSASelect';
 
-import {GenderChooser, NobilitySwitch} from './DSANameUtils';
-import RandomNameGenerator from './RandomNameGenerator';
+import {parse, stringify} from './DSANameUtils';
+
+import DSANormalNames from "./DSANormalNames";
 import {Garethien} from './DSANamesGarethien';
 import {Albernia} from './DSANamesAlbernia';
 import {Almada} from './DSANamesAlmada';
@@ -45,11 +45,6 @@ const REGIONS = [
   {name: "Windhag", names: Windhag},
 ].sort((a,b) => a.name.localeCompare(b.name));
 
-const Q_STR_FMT = {
-  parseNumbers: true,
-  parseBooleans: true,
-}
-
 function RegionChooser(props) {
   const {region, onChange} = props;
   const options = REGIONS.map(a => {return {value: a.name, label: a.name}})
@@ -61,47 +56,29 @@ function RegionChooser(props) {
     </DSAGridRow>
 }
 
-export class DSAMittelreich extends React.Component {
+const DSAMittelreich = (props) => {
+  const {classes, location, history, onNameChosen} = props;
 
-  onParameterChange = (name, value) => {
-    let values = queryString.parse(
-      this.props.location.search,
-      Q_STR_FMT);
+  const onParameterChange = (name, value) => {
+    let values = parse(location.search);
     values[name] = value;
-    this.props.history.push({
-      search: queryString.stringify(values)
+    history.push({
+      search: stringify(values)
     });
   }
 
-  render() {
-    const {classes, location, onNameChosen} = this.props;
-    const values = queryString.parse(location.search, Q_STR_FMT);
-    const {gender, nobility, region} = values;
-    const r = region ? region : REGIONS[2].name;
-    return <div className={classes.root}>
-      <DSAGrid className={classes.root}>
-        <DSAGridItem lg={3} md={6} sm={12}>
-          <DSAGrid>
-            <RegionChooser
-              region={r}
-              onChange={e => this.onParameterChange("region", e)} />
-            <GenderChooser
-              gender={gender ? gender : "x"}
-              onChange={e => this.onParameterChange("gender", e)} />
-            <NobilitySwitch
-              nobility={nobility ? nobility : false}
-              onChange={e => this.onParameterChange("nobility", e)} />
-          </DSAGrid>
-        </DSAGridItem>
-        <DSAGridItem lg={9} md={6} sm={12}>
-          <RandomNameGenerator
-            names={REGIONS.find(a => a.name === r).names}
-            {...values}
-            onNameChosen={onNameChosen}/>
-        </DSAGridItem>
-      </DSAGrid>
-    </div>
-  }
+  const values = parse(location.search);
+  const {region} = values;
+  const r = region ? region : REGIONS[2].name;
+  const names = REGIONS.find(a => a.name === r).names;
+  return (
+    <DSAGrid className={classes.root}>
+      <RegionChooser
+        region={r}
+        onChange={e => onParameterChange("region", e)} />
+      <DSANormalNames names={names} onNameChosen={onNameChosen}/>
+    </DSAGrid>
+  );
 }
 
 DSAMittelreich.propTypes = {

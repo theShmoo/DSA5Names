@@ -6,15 +6,10 @@ import { withRouter } from 'react-router-dom'
 import { DSAGrid, DSAGridRow } from '../controls/DSAGrid';
 import DSASelect from '../controls/DSASelect';
 
-const styles = theme => ({
-  root: {}
-});
 
-function DSANameChooser(props) {
+const DSANameChooser = (props) => {
   const {classes, names, history, location} = props;
-
   const current = names.find(p => p.value === location.pathname);
-
   return <DSAGrid className={classes.root}>
       <DSAGridRow>
         <DSASelect options={names}
@@ -30,4 +25,5 @@ DSANameChooser.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
+const styles = theme => ({root: {}});
 export default withRouter(withStyles(styles)(DSANameChooser));
