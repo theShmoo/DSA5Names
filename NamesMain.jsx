@@ -14,6 +14,7 @@ import DSAMittelreich from './DSAMittelreich';
 import DSANormalNames from './DSANormalNames';
 
 import {Aranien} from './DSANamesAranien';
+import {Andergast} from './DSANamesAndergast';
 import {Nivesen} from './DSANamesNivesen';
 import {Norbaden} from './DSANamesNorbaden';
 import {Nostria} from './DSANamesNostria';
@@ -81,37 +82,37 @@ class NamesMain extends React.Component {
       {
         page: <DSAMittelreich onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "mittelreich",
-        label: "Mittelreich"
+        label: "Mittelreich (Garethi)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "alanfa",
-        label: "Al'Anfa & Tiefer Süden"
+        label: "Al'Anfa & Tiefer Süden (Brabaci, Gatamo)"
       },
       {
-        page: <div>not yet implemented</div>,
+        page: <DSANormalNames names={Andergast} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "andergast",
-        label: "Andergast"
+        label: "Andergast (Andergastisch)"
       },
       {
         page: <DSANormalNames names={Aranien} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "aranien",
-        label: "Aranien"
+        label: "Aranien (Aranisch, Aretya, Tulamidya)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "bornland",
-        label: "Bornland"
+        label: "Bornland (Bornländisch)"
       },
       {
         page: <DSANormalNames names={Nivesen} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "nivesen",
-        label: "Nivesen"
+        label: "Nivesen (Nujuka)"
       },
       {
         page: <DSANormalNames names={Norbaden} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "norbaden",
-        label: "Norbaden"
+        label: "Norbaden (Alaani, Gajak, Takellen)"
       },
       {
         page: <div>not yet implemented</div>,
@@ -126,12 +127,12 @@ class NamesMain extends React.Component {
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "horasreich",
-        label: "Horasreich"
+        label: "Horasreich (Horathi)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "uthuria",
-        label: "Uthurische Modenamen"
+        label: "Uthurische Modenamen (Dschuku, Nathani, Uthurisch)"
       },
       {
         page: <div>not yet implemented</div>,
@@ -141,7 +142,7 @@ class NamesMain extends React.Component {
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "maraskan",
-        label: "Maraskan"
+        label: "Maraskan (Maraskani, Ruuz)"
       },
       {
         page: <div>not yet implemented</div>,
@@ -161,12 +162,12 @@ class NamesMain extends React.Component {
       {
         page: <DSANormalNames names={Selem} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "selem",
-        label: "Selem"
+        label: "Selem (Zelemja)"
       },
       {
         page: <DSANormalNames names={Bukanier} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "meer",
-        label: "Südmeer & Bukanier"
+        label: "Südmeer & Bukanier (Brabaci, Bukanisch, Charypto, Gatamo)"
       },
       {
         page: <DSANormalNames names={Svellttal} onNameChosen={this.addNameToHistory} />,
@@ -176,12 +177,12 @@ class NamesMain extends React.Component {
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "thalusien",
-        label: "Thalusien"
+        label: "Thalusien (Tulamidya)"
       },
       {
         page: <DSANormalNames names={Thorwal} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "thorwal",
-        label: "Thorwal"
+        label: "Thorwal (Thorwalsch, Hjaldingsch)"
       },
       {
         page: <div>not yet implemented</div>,
@@ -191,27 +192,27 @@ class NamesMain extends React.Component {
       {
         page: <DSANormalNames names={Trollzacker} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "trollzacker",
-        label: "Trollzacker"
+        label: "Trollzacker (Zhulchammaqra)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "tulamidenlande",
-        label: "Tulamidenlande & Kalifat"
+        label: "Tulamidenlande & Kalifat (Mahnadisch, Balashidisch, Tulamidya)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "utulu",
-        label: "Waldmenschenstämme & Utulu"
+        label: "Waldmenschenstämme (Mohisch) & Utulu (Puka-Puka)"
       },
       {
         page: <DSANormalNames names={Zahori} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "zahori",
-        label: "Zahori"
+        label: "Zahori (Zahorisch)"
       },
       {
         page: <DSANormalNames names={Zyklopeninseln} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "zyklopeninseln",
-        label: "Zyklopeninseln"
+        label: "Zyklopeninseln (Zyklopäisch)"
       },
       {
         page: <DSANormalNames names={Zwoelfgoetter} onNameChosen={this.addNameToHistory} />,
@@ -221,42 +222,42 @@ class NamesMain extends React.Component {
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "echsen",
-        label: "Echsenmenschen"
+        label: "Echsenmenschen (Rssah)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "elfen",
-        label: "Elfen"
+        label: "Elfen (Asdharia, Isdira)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "goblins",
-        label: "Golbins"
+        label: "Golbins (Goblinisch)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "oger",
-        label: "Oger"
+        label: "Oger (Ogrisch)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "grolme",
-        label: "Grolme"
+        label: "Grolme (Grolmisch)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "orks",
-        label: "Orks"
+        label: "Orks (Oloark, Ologhaijan)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "trolle",
-        label: "Trolle"
+        label: "Trolle (Trollisch)"
       },
       {
         page: <div>not yet implemented</div>,
         path: ROOT_PATH + "zwerge",
-        label: "Zwerge"
+        label: "Zwerge (Angram)"
       },
       {
         page: <div>not yet implemented</div>,

@@ -29,8 +29,8 @@ const styles = theme => ({
 });
 
 const REGIONS = [
-  {name: "Albernia", names: Albernia},
-  {name: "Almada", names: Almada},
+  {name: "Albernia (Alberned)", names: Albernia},
+  {name: "Almada (Almadanisch)", names: Almada},
   {name: "Garethien", names: Garethien},
   {name: "Greifenfurt", names: Greifenfurt},
   {name: "Kosch", names: Kosch},
