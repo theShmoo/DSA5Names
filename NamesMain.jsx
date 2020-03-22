@@ -25,6 +25,7 @@ import {Bukanier} from './DSANamesBukanier';
 import {Svellttal} from './DSANamesSvellttal';
 import {Thorwal} from './DSANamesThorwal';
 import {Trollzacker} from './DSANamesTrollzacker';
+import {Fjarninger} from './DSANamesFjarninger';
 import {Zahori} from './DSANamesZahori';
 import {Zyklopeninseln} from './DSANamesZyklopeninseln';
 import {Zwoelfgoetter} from './DSANamesZwoelfgoetter';
@@ -184,6 +185,11 @@ class NamesMain extends React.Component {
         page: <DSANormalNames names={Thorwal} onNameChosen={this.addNameToHistory} />,
         path: ROOT_PATH + "thorwal",
         label: "Thorwal (Thorwalsch, Hjaldingsch)"
+      },
+      {
+        page: <DSANormalNames names={Fjarninger} onNameChosen={this.addNameToHistory} />,
+        path: ROOT_PATH + "fjarning",
+        label: "Fjarninger (Fjarningsch)"
       },
       {
         page: <div>not yet implemented</div>,
