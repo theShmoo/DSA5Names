@@ -9,20 +9,6 @@ import DSASelect from '../controls/DSASelect';
 import {parse, stringify} from './DSANameUtils';
 
 import DSANormalNames from "./DSANormalNames";
-import {Garethien} from './DSANamesGarethien';
-import {Albernia} from './DSANamesAlbernia';
-import {Almada} from './DSANamesAlmada';
-import {Greifenfurt} from './DSANamesGreifenfurt';
-import {Kosch} from './DSANamesKosch';
-import {Nordmarken} from './DSANamesNordmarken';
-import {Perricum} from './DSANamesPerricum';
-import {Rabenmark} from './DSANamesRabenmark';
-import {RommilyserMark} from './DSANamesRommilyserMark';
-import {Sonnenmark} from './DSANamesSonnenmark';
-import {Tobrien} from './DSANamesTobrien';
-import {Warunk} from './DSANamesWarunk';
-import {Weiden} from './DSANamesWeiden';
-import {Windhag} from './DSANamesWindhag';
 
 const styles = theme => ({
   root: {}

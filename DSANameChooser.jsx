@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom'
 import { DSAGrid, DSAGridRow } from '../controls/DSAGrid';
 import DSASelect from '../controls/DSASelect';
 
-
 const DSANameChooser = (props) => {
   const {classes, names, history, location} = props;
   const current = names.find(p => p.value === location.pathname);

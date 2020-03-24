@@ -6,12 +6,12 @@ import {getRandomElement} from '../utils/RandomUtils';
 
 const NUM_NAMES_TO_GENEREATE = 10;
 
-function generateNames(args) {
+function generateNames(args, seed) {
     let names = []
     for(let i = 0; i < NUM_NAMES_TO_GENEREATE; ++i) {
       const name = args.reduce((sum, a) => {
         if(a && a.names.length > 0) {
-          sum += getRandomElement(a.names) + a.sep;
+          sum += getRandomElement(a.names, seed) + a.sep;
         }
         return sum;
       }, "");
@@ -56,18 +56,20 @@ function generatePartWithSuffix(part, fallback, gender) {
 }
 
 const PARTS = ["pre", "second", "post"];
-const fallback = "normal";
+const FALLBACK = "normal";
 
 const RandomNameGenerator = (props) => {
-  const {gender, region, onNameChosen, names, option} = props;
+  const {gender, region, onNameChosen, names, option, seed} = props;
   const nameRedirection = (n) => (e) => {
     onNameChosen(n);
   }
-  const t = option ? option : fallback;
+  const t = option ? option : FALLBACK;
   const parts = PARTS.map(part =>
-    generatePartWithSuffix(names[t][part], names[fallback][part], gender)
+    generatePartWithSuffix(names[t][part],
+      names[FALLBACK][part],
+      gender)
   ).flat(1);
-  const generatedNames = generateNames(parts);
+  const generatedNames = generateNames(parts, seed);
   const items = generatedNames.map(n => {
     return {value: n, action: nameRedirection(n)}
   });
