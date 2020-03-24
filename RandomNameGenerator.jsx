@@ -63,9 +63,8 @@ const RandomNameGenerator = (props) => {
   const nameRedirection = (n) => (e) => {
     onNameChosen(n);
   }
-  const t = option ? option : FALLBACK;
   const parts = PARTS.map(part =>
-    generatePartWithSuffix(names[t][part],
+    generatePartWithSuffix(names[option][part],
       names[FALLBACK][part],
       gender)
   ).flat(1);

@@ -41,11 +41,15 @@ const DSANameFilter = (props) => {
     }
   }
 
-  const regionOptions = getFilteredBy(Namen, "region", ["area"], filter).map(r => {
+  const regionOptions = getFilteredBy(Namen, "region", ["area", "race"], filter).map(r => {
     return {value: r, "label": r}
   })
 
-  const areaOptions = getFilteredBy(Namen, "area", ["region"], filter).map(r => {
+  const areaOptions = getFilteredBy(Namen, "area", ["region", "race"], filter).map(r => {
+    return {value: r, "label": r}
+  })
+
+  const raceOptions = getFilteredBy(Namen, "race", ["region", "area"], filter).map(r => {
     return {value: r, "label": r}
   })
 
@@ -54,7 +58,7 @@ const DSANameFilter = (props) => {
   }).sort((l,r) => l.label.localeCompare(r.label));
 
   return <DSAGrid>
-        <DSAGridItem xs={12} sm={12} md={6}>
+        <DSAGridItem xs={12} sm={12} md={4}>
           <DSASelect options={regionOptions}
             label="Regionen"
             value={filter.region}
@@ -62,13 +66,21 @@ const DSANameFilter = (props) => {
             onChange={e => onfilterResultToFilter("region", e)}
             helperText="z.B.: Nördliches, Zentrales oder Südliches Aventurien" />
         </DSAGridItem>
-        <DSAGridItem xs={12} sm={12} md={6}>
+        <DSAGridItem xs={12} sm={12} md={4}>
           <DSASelect options={areaOptions}
             label="Kultur"
             value={filter.area}
             multi={true}
             onChange={e => onfilterResultToFilter("area", e)}
             helperText="z.B.: Mittelreich" />
+        </DSAGridItem>
+        <DSAGridItem xs={12} sm={12} md={4}>
+          <DSASelect options={raceOptions}
+            label="Rasse"
+            value={filter.race}
+            multi={true}
+            onChange={e => onfilterResultToFilter("race", e)}
+            helperText="z.B.: Mensch" />
         </DSAGridItem>
       <NameChooser names={options}/>
     </DSAGrid>;

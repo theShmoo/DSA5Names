@@ -110,13 +110,17 @@ class NamesMain extends React.Component {
             <DSAInfoBox title="Namen">
               <NameFilter filteredNames={filteredNames} filter={filter} onFilterChanged={this.onFilterChanged}/>
               <Switch>
-                {filteredNames.map((p, i) => <Route key={i} path={ROOT_PATH + p.path} render={
-                  (a) => <NormalNames names={p.names}
-                            onParameterChange={this.onParameterChange}
-                            onNameChosen={this.addNameToHistory}
-                            onRandomize={this.randomize}
-                            values={values}
-                            seed={seed} />
+                {filteredNames.map((p, i) => <Route key={i}
+                  path={ROOT_PATH + p.path}
+                  location={location}
+                  render={
+                    (a) => <NormalNames names={p.names}
+                              onParameterChange={this.onParameterChange}
+                              onNameChosen={this.addNameToHistory}
+                              onRandomize={this.randomize}
+                              values={values}
+                              region={p.label}
+                              seed={seed} />
                 } />)}
               </Switch>
             </DSAInfoBox>

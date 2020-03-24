@@ -14,7 +14,7 @@ const DSANameChooser = (props) => {
         <DSASelect options={names}
           label="Namen"
           value={current ? current.value : ""}
-          onChange={e => history.push(e.value)}
+          onChange={e => history.push(e.value + location.search)}
           helperText="z.B.: Mittelreich" />
       </DSAGridRow>
     </DSAGrid>;
