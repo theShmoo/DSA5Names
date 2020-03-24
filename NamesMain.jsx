@@ -113,7 +113,7 @@ class NamesMain extends React.Component {
                 {filteredNames.map((p, i) => <Route key={i} path={ROOT_PATH + p.path} render={
                   (a) => <NormalNames names={p.names}
                             onParameterChange={this.onParameterChange}
-                            onNameToHistory={this.onNameToHistory}
+                            onNameChosen={this.addNameToHistory}
                             onRandomize={this.randomize}
                             values={values}
                             seed={seed} />
