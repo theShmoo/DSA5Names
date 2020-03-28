@@ -1,36 +1,37 @@
-import {Garethien} from './DSANamesGarethien';
-import {Albernia} from './DSANamesAlbernia';
-import {Almada} from './DSANamesAlmada';
-import {Greifenfurt} from './DSANamesGreifenfurt';
-import {Kosch} from './DSANamesKosch';
-import {Nordmarken} from './DSANamesNordmarken';
-import {Perricum} from './DSANamesPerricum';
-import {Rabenmark} from './DSANamesRabenmark';
-import {RommilyserMark} from './DSANamesRommilyserMark';
-import {Sonnenmark} from './DSANamesSonnenmark';
-import {Tobrien} from './DSANamesTobrien';
-import {Warunk} from './DSANamesWarunk';
-import {Weiden} from './DSANamesWeiden';
-import {Windhag} from './DSANamesWindhag';
-import {Aranien} from './DSANamesAranien';
-import {Andergast} from './DSANamesAndergast';
-import {Bornland} from './DSANamesBornland';
-import {Grolme} from './DSANamesGrolme';
-import {Kemi} from './DSANamesKemi';
-import {Nivesen} from './DSANamesNivesen';
-import {Norbaden} from './DSANamesNorbaden';
-import {Nostria} from './DSANamesNostria';
-import {Oger} from './DSANamesOger';
-import {Schattenlande} from './DSANamesSchattenlande';
-import {Selem} from './DSANamesSelem';
-import {Bukanier} from './DSANamesBukanier';
-import {Svellttal} from './DSANamesSvellttal';
-import {Thorwal} from './DSANamesThorwal';
-import {Trollzacker} from './DSANamesTrollzacker';
-import {Fjarninger} from './DSANamesFjarninger';
-import {Zahori} from './DSANamesZahori';
-import {Zyklopeninseln} from './DSANamesZyklopeninseln';
-import {Zwoelfgoetter} from './DSANamesZwoelfgoetter';
+import {Garethien} from './data/DSANamesGarethien';
+import {Albernia} from './data/DSANamesAlbernia';
+import {Almada} from './data/DSANamesAlmada';
+import {Greifenfurt} from './data/DSANamesGreifenfurt';
+import {Kosch} from './data/DSANamesKosch';
+import {Nordmarken} from './data/DSANamesNordmarken';
+import {Perricum} from './data/DSANamesPerricum';
+import {Rabenmark} from './data/DSANamesRabenmark';
+import {RommilyserMark} from './data/DSANamesRommilyserMark';
+import {Sonnenmark} from './data/DSANamesSonnenmark';
+import {Tobrien} from './data/DSANamesTobrien';
+import {Warunk} from './data/DSANamesWarunk';
+import {Weiden} from './data/DSANamesWeiden';
+import {Windhag} from './data/DSANamesWindhag';
+import {Aranien} from './data/DSANamesAranien';
+import {Andergast} from './data/DSANamesAndergast';
+import {Bornland} from './data/DSANamesBornland';
+import {Grolme} from './data/DSANamesGrolme';
+import {Kemi} from './data/DSANamesKemi';
+import {Nivesen} from './data/DSANamesNivesen';
+import {Norbaden} from './data/DSANamesNorbaden';
+import {Nostria} from './data/DSANamesNostria';
+import {Oger} from './data/DSANamesOger';
+import {Schattenlande} from './data/DSANamesSchattenlande';
+import {Selem} from './data/DSANamesSelem';
+import {Bukanier} from './data/DSANamesBukanier';
+import {Svellttal} from './data/DSANamesSvellttal';
+import {Thorwal} from './data/DSANamesThorwal';
+import {Trollzacker} from './data/DSANamesTrollzacker';
+import {Fjarninger} from './data/DSANamesFjarninger';
+import {Zahori} from './data/DSANamesZahori';
+import {Zyklopeninseln} from './data/DSANamesZyklopeninseln';
+import {Zwoelfgoetter} from './data/DSANamesZwoelfgoetter';
+import {Elfen} from './data/DSANamesElfen';
 
 export const Namen = [
   {"names": Garethien, "label": "Garethien", "path": "garethien", "region": "Zentrales Aventurien", "area": "Mittelreich", "race": "Mensch"},
@@ -65,7 +66,8 @@ export const Namen = [
   {"names": Fjarninger, "label": "Fjarninger (Fjarningsch)", "path": "fjarninger", "region": "Nördliches Aventurien", "area": "Thorwal", "race": "Mensch"},
   {"names": Zahori, "label": "Zahori (Zahorisch)", "path": "zahori", "area": "Zahori", "race": "Mensch"},
   {"names": Zyklopeninseln, "label": "Zyklopeninseln (Zyklopäisch)", "path": "zyklopeninseln", "region": "Zentrales Aventurien", "area": "Horasreich", "race": "Mensch"},
-  {"names": Zwoelfgoetter, "label": "Zwoelfgötternamen", "path": "zwoelfgoetter"}
+  {"names": Zwoelfgoetter, "label": "Zwoelfgötternamen", "path": "zwoelfgoetter"},
+  {"names": Elfen, "label": "Elfen (Asdharia, Asdharia)", "path": "elfen", "race": "Elfen"},
 ]
 
 const NOT_YET_IMPLEMENTED = [
@@ -81,7 +83,6 @@ const NOT_YET_IMPLEMENTED = [
   {path: "tulamidenlande", label: "Tulamidenlande & Kalifat (Mahnadisch, Balashidisch, Tulamidya)"},
   {path: "utulu", label: "Waldmenschenstämme (Mohisch) & Utulu (Puka-Puka)"},
   {path: "echsen", label: "Echsenmenschen (Rssah)"},
-  {path: "elfen", label: "Elfen (Asdharia, Isdira)"},
   {path: "goblins", label: "Golbins (Goblinisch)"},
   {path: "orks", label: "Orks (Oloark, Ologhaijan)"},
   {path: "trolle", label: "Trolle (Trollisch)"},
