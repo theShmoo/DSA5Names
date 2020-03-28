@@ -73,7 +73,8 @@ export const Namen = [
   {"names": Zyklopeninseln, "label": "Zyklopeninseln (Zyklopäisch)", "path": "zyklopeninseln", "region": "Zentrales Aventurien", "area": "Horasreich", "race": "Mensch"},
   {"names": Zwoelfgoetter, "label": "Zwoelfgötternamen", "path": "zwoelfgoetter"},
   {"names": Elfen, "label": "Elfen (Asdharia, Asdharia)", "path": "elfen", "race": "Elfen"},
-  {"names": Waldmenschen, "path": "waldmenschen", "label": "Utulu (Puka-Puka) und Waldmenschenstämme (Mohisch)", "race": "Mensch", "area": "Stämme"}
+  {"names": Waldmenschen, "path": "waldmenschen", "label": "Utulu (Puka-Puka) und Waldmenschenstämme (Mohisch)", "race": "Mensch", "area": "Stämme"},
+  {"names": Trolle, "path": "trolle", "label": "Trolle (Trollisch)", "race": "Trolle", "area": "Stämme"}
 ]
 
 const NOT_YET_IMPLEMENTED = [
@@ -91,7 +92,6 @@ const NOT_YET_IMPLEMENTED = [
   {"path": "kuenstler", "label": "Bühnen- & Künstlernamen"},
   {"path": "magier", "label": "Magier- & Weihennamen"},
   {"names": Ferkina, "path": "ferkina", "label": "Ferkinas", "race": "Mensch", "area": "Stämme"},
-  {"names": Trolle, "path": "trolle", "label": "Trolle (Trollisch)", "race": "Trolle", "area": "Stämme"},
   {"names": Orks, "path": "orks", "label": "Orks (Oloark, Ologhaijan)", "race": "Orks", "area": "Stämme"},
   {"names": Goblins, "path": "goblins", "label": "Golbins (Goblinisch)", "race": "Goblins", "area": "Stämme"},
 ]

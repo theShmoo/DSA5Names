@@ -71,9 +71,9 @@ export const Elfen = {
     "name": "Shakagra (Nachtalben)",
     "post": {
       "names": {
-        "m": ["Bluttrinker", "Elfenschlächter", "Klingensänger"],
-        "w": ["Bluttrinkerin", "Elfenschlächterin", "Klingensängerin"],
-        "x": ["bringt-Opfer-dar", "Dunkelfeuer", "Dunkelstern", "Eisatem", "Eisblüte", "Eisgänger", "Eispfeil", "erschafft-Leben", "Finsterblick", "Finsterklinge", "Finsterstein", "Flammenauge", "Frostlachen", "Frostnacht", "gefriert-die-Tiefen", "Herz-aus-Eis", "Himmelsbrand", "Klingenbrand", "Nachtstahl", "säht-Zwietracht", "Schattentanz", "Scherbensang", "Schmerzweber", "Schwarzfels", "Schwarzflamme", "Schwarzklinge", "Schwarzträne", "spaltet-die-Sphären", "Spinnenhaar", "springt-in-den-Abgrund", "stellt-keine-Fragen", "Sternenfeuer", "strebt-in-die-Tiefe", "tief-wie-die-Nacht", "Todesspeer", "treibt-in-die-Schatten", "trifft-ins-Herz", "verflucht-das-Licht", "verlacht-den-Tod", "verlischt-das-Licht", "versprüht-Gift", "vertreibt-den-Sturm", "Weißhaut", "zerschmettert-den-Geist", "Zunge-der-Göttin", "Zunge-der-Frevler"]
+        "m": ["Bluttrinker", "Eisgänger",  "Elfenschlächter", "Klingensänger"],
+        "w": ["Bluttrinkerin", "Eisgängerin", "Elfenschlächterin", "Klingensängerin"],
+        "x": ["bringt-Opfer-dar", "Dunkelfeuer", "Dunkelstern", "Eisatem", "Eisblüte", "Eispfeil", "erschafft-Leben", "Finsterblick", "Finsterklinge", "Finsterstein", "Flammenauge", "Frostlachen", "Frostnacht", "gefriert-die-Tiefen", "Herz-aus-Eis", "Himmelsbrand", "Klingenbrand", "Nachtstahl", "säht-Zwietracht", "Schattentanz", "Scherbensang", "Schmerzweber", "Schwarzfels", "Schwarzflamme", "Schwarzklinge", "Schwarzträne", "spaltet-die-Sphären", "Spinnenhaar", "springt-in-den-Abgrund", "stellt-keine-Fragen", "Sternenfeuer", "strebt-in-die-Tiefe", "tief-wie-die-Nacht", "Todesspeer", "treibt-in-die-Schatten", "trifft-ins-Herz", "verflucht-das-Licht", "verlacht-den-Tod", "verlischt-das-Licht", "versprüht-Gift", "vertreibt-den-Sturm", "Weißhaut", "zerschmettert-den-Geist", "Zunge-der-Göttin", "Zunge-der-Frevler"]
       },
     },
     "pre": {
