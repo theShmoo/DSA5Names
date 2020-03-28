@@ -11,7 +11,7 @@ export const Kemi = {
   "normal": {
     "name": "Bürger",
     "post": {
-      "prefix": {"x": ["Ni "]},
+      "prefix": {"x": ["Ni"]},
       "names": {
         "x": ["Biazzan", "Djáset", "Ireth", "Jem'ka", "Khefu", "Náareb", "Qinsay", "Setepen", "Yleha"]
       }

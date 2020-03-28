@@ -2,7 +2,7 @@ export const Tobrien = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Angenfurt", "Angwartshof", "Appelauen", "Auersbrück", "Auersfurt", "Bärenklamm", "Bardostein", "Birnbrosch", "Borking", "Dunkelforst", "Eberstamm", "Falkenhag", "Garnelhaun", "Herbonia", "Koschfurt", "Koschtal", "Lanzendorf", "Möhrfelden", "Nadoret", "Niederborking", "Riedenbusch", "Salmingen", "Schotterfels", "Steinhag", "Stippwitz", "Uztrutz", "Wengenholm"]
       }

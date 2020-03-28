@@ -2,7 +2,10 @@ export const Zyklopeninseln = {
   "nobility": {
     "name": "Adel",
     "second": {
-      "prefix": {"x": ["A'"]}
+      "prefix": {
+        "x": ["A"],
+        "sep": ["'"]
+      }
     },
     "post": {
       "names": {
@@ -13,7 +16,7 @@ export const Zyklopeninseln = {
   "normal": {
     "name": "Bürger",
     "second": {
-      "prefix": {"x": ["a "]},
+      "prefix": {"x": ["a"]},
       "names": {"x": ["Arÿios", "Athyros", "Ayodon", "Balträa", "Ferein", "Garén", "Larÿios", "Lÿios", "Mura", "Palakar", "Putras", "Akidos", "Arkis", "Baltrea", "Dubar", "Heliopolos", "Hylailos", "Hylpia", "Kethas", "Kethenis", "Kutaki", "Lardos", "Mylamas", "Pailos", "Phenos", "Phrygaios", "Putras", "Tenos", "Teremon", "Tyllos", "Tyrakis"]}
     },
     "post": {

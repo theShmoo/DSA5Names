@@ -2,7 +2,7 @@ export const Albernia = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "m": ["ui "], "w": ["ni "] },
+      "prefix": { "m": ["ui"], "w": ["ni"] },
       "names": {
         "x": ["Arodon", "Crumold", "Fenwasian", "Herlogan", "Niriansee", "Sanin", "Stepahan", "Taladan", "Bennain", "Conchobair", "Llud", "Niamad", "Albenbluth", "Aldewen", "Eryn", "Farn­wart", "Fingorn", "Galahan", "Helman"]}
       }

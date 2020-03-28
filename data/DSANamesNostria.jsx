@@ -2,7 +2,7 @@ export const Nostria = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": {"x": ["von ", "zu "]},
+      "prefix": {"x": ["von", "zu"]},
       "names": {
         "x": ["Ansfinion", "Baumbach", "Eichenschlag", "Fennling", "Gischtreyter", "Hyttenhau", "Ingvalsrohden", "Moorweiden", "Ornibian", "Rheideryan", "Salis", "Sappenstiel", "Tiefenbach", "Tommelfurt", "Vestwind", "Warftburg", "Wyrmbluth"]
       }

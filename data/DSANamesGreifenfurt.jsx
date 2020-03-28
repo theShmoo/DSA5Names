@@ -2,7 +2,7 @@ export const Greifenfurt = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Ährenstein", "Altnardesfeld", "Angenforst", "Auerfelde", "Beldenhag", "Bugenbühl", "Dergelstein", "Dunkelfelde", "Dunkelsfarn", "Eisslingern", "Feldharsch", "Finsterforst", "Finsterkamm", "Finsterrode", "Gantenstein", "Greifenberg", "Greifenhorst", "Hasenfeld", "Hexenhain", "Keilholtz", "Kieselburg", "Krähenklamm", "Nebelstein", "Orkenwall", "Reichsweg", "Reiffenberg", "Schattenstein", "Schroffenstein", "Schwarzforst", "Wertlingen", "Wolfenhain"]}
       }

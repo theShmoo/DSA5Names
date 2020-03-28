@@ -2,7 +2,7 @@ import React from 'react';
 
 import DSAItemList from '../controls/DSAItemList';
 
-import {getRandomElement} from '../utils/RandomUtils';
+import {getRandomElement, getRandomIntInclusive} from '../utils/RandomUtils';
 
 const NUM_NAMES_TO_GENEREATE = 10;
 
@@ -11,7 +11,13 @@ function generateNames(args, seed) {
     for(let i = 0; i < NUM_NAMES_TO_GENEREATE; ++i) {
       const name = args.reduce((sum, a) => {
         if(a && a.names.length > 0) {
-          sum += getRandomElement(a.names, seed) + a.sep;
+          const repeat = getRandomIntInclusive(a.repeat.from, a.repeat.to, seed);
+          for (let i = 0; i < repeat; ++i) {
+            sum += getRandomElement(a.names, seed) + getRandomElement(a.sep, seed);
+          }
+          if(a.capitalize) {
+            sum = sum.charAt(0).toUpperCase() + sum.slice(1);
+          }
         }
         return sum;
       }, "");
@@ -37,21 +43,28 @@ function getGender(part, gender) {
   return retval;
 }
 
-function generatePart(part, fallback, suffix, sep, gender) {
+function sanitizePart(part, gender) {
+  const separator = part.sep ? part.sep : [" "];
+  const repeat = part.repeat ? part.repeat : {"from": 1, "to": 1};
+  const capitalize = part.capitalize ? part.capitalize : false;
+  return {sep: separator, names: getGender(part, gender), repeat: repeat, capitalize: capitalize};
+}
+
+function generatePart(part, fallback, suffix, gender) {
   if(part && part[suffix]) {
-    return {sep: sep, names: getGender(part[suffix], gender)};
+    return sanitizePart(part[suffix], gender);
   }
   else if(fallback && fallback[suffix]){
-    return {sep: sep, names: getGender(fallback[suffix], gender)};
+    return sanitizePart(fallback[suffix], gender);
   }
   return undefined;
 }
 
 function generatePartWithSuffix(part, fallback, gender) {
   return [
-    generatePart(part, fallback, "prefix", "", gender),
-    generatePart(part, fallback, "names", " ", gender),
-    generatePart(part, fallback, "postfix", "", gender)
+    generatePart(part, fallback, "prefix", gender),
+    generatePart(part, fallback, "names", gender),
+    generatePart(part, fallback, "postfix", gender)
   ];
 }
 

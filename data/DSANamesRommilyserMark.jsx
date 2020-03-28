@@ -2,7 +2,7 @@ export const RommilyserMark = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Baernfarn", "Bregelsaum", "Darpatstrom", "Dergelbrück", "Erlenfang", "Firunslicht", "Gernatfurten", "Mersingen", "Natternfurt", "Natterwacht", "Ochs", "Ochsenwasser", "Ockenheld", "Oppstein", "Rabenmund", "Rosshagen", "Sturmfels"]
       }

@@ -2,7 +2,7 @@ export const Weiden = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Auenfels", "Blauenburg", "Bibergau", "Binsböckel", "Birselburg", "Blaubinge", "Dergelquell", "Fälklin", "Finsterbach", "Fuchshag", "Grauenfels", "Grîngelbaum", "Harlburg", "Hohenstein", "Leuenfeste", "Löwenhaupt", "Nordfalk", "Pandlaril", "Rotenwasser", "Rotwasser", "Schneehag", "Schnewlin", "Schrauffenfels", "Sichelbruch", "Weißenstein", "Weiden"]
       }

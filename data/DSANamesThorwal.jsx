@@ -11,7 +11,8 @@ export const Thorwal = {
     },
     "second": {
       "prefix": {
-        "x": names.w.concat(names.m)
+        "x": names.w.concat(names.m),
+        "sep": [""],
       },
       "names": {
         "m": ["son"],
@@ -19,7 +20,7 @@ export const Thorwal = {
       }
     },
     "post": {
-      "prefix": {"x": ["von der "]},
+      "prefix": {"x": ["von der"]},
       "names": {
         "x": ["Donnerkeil", "Eiszwinger", "Eldgrimm", "Fjordzwinger", "Geraldssons", "Gischtreiter", "Haitaucher", "Hammerfaust", "Hjörnen", "Klippenzwinger", "Lassirer", "Drachen", "Nordlicht", "Orkschläger", "Seewölfe", "Sturmkinder", "Sturmmöven", "Sturmspeere", "Thorfinn", "Walsinger", "Wellenbrecher", "Windlästerer", "Windzwinger", "Wogenreiter"]
       },

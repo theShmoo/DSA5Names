@@ -2,7 +2,7 @@ export const Windhag = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Aichhain", "Drachenwacht", "Greifenklamm", "Grötz", "Osthagen", "Schattengrund", "Trutzburg", "Westwind", "Windock", "Windisch", "Widdernhall"]
       }
@@ -16,7 +16,7 @@ export const Windhag = {
       }
     },
     "post": {
-      "prefix": { "x": ["aus "] },
+      "prefix": { "x": ["aus"] },
       "postfix": { "x": ["Sippe"] },
       "names": {
         "x": ["Borgruns", "Cortaks", "Garans", "Gerfins", "Hellrons", "Peukins", "Taurons", "Udamans"]

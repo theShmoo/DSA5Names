@@ -2,7 +2,10 @@ export const Trollzacker = {
   "normal": {
     "name": "Bürger",
     "post": {
-      "prefix": {"x": ["Ul'"]},
+      "prefix": {
+        "x": ["Ul"],
+        "sep": ["'"]
+      },
       "names": {
         "x": ["Amad'rochan", "Charis'ramarh", "Gor'rohashim", "Koro'warh", "Mach'nahtul", "Zum'achan"]
       }

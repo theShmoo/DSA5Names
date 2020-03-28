@@ -2,7 +2,7 @@ export const Andergast = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Bärental", "Billingen", "Borkenquell", "Buchenhain", "Egeling", "Kolburg", "Langfurt", "Leuengrund", "Otternpfot", "Reichenstieg", "Rotbaum", "Rothschild", "Schönburg", "Steineichenwacht", "Tatzenhain", "Tiefenklamm", "Zitterfels", "Zornbold"]
       }

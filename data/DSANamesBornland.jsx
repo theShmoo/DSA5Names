@@ -2,7 +2,7 @@ export const Bornland = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Aringen", "Blütenfeld", "Brinbaum", "Dotzen", "Elkauen", "Erbarmen", "Eschenfurt", "Gradnochsjepengurken", "Hinzk", "Ilmenstein", "Kirschhausen", "Krempelow", "Larsach", "Notmark", "Plötzingen", "Quelldunkel", "Salderkeim", "Schossko", "Sjepengurken", "Treie", "Wosna"]
       }

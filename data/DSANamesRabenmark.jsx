@@ -2,7 +2,7 @@ export const Rabenmark = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Ackerer", "Ährengatter", "Aschenfeld", "Baernfarn", "Beschleger", "Binsböckel", "Blutfelden", "Boronsruh", "Mersingen", "Niederauen", "Praiosau", "Rabenfeld", "Rabenthal", "Rabentreu", "Rechthag", "Sensenhöh", "Sichelgrab", "Trollsburg", "Trollstädt"]
       }

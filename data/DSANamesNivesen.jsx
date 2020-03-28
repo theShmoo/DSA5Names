@@ -2,7 +2,7 @@ export const Nivesen = {
   "normal": {
     "name": "Bürger",
     "post": {
-      "prefix": {"x": ["von den ", ""]},
+      "prefix": {"x": ["von den ", ""], "sep": [""]},
       "names": {
         "x": ["Auka-Lie", "Hokke", "Kaiku", "Kaiyakuu-Lie", "Kettu-Lie", "Kylänjak", "Lieska-Jaärna", "Lieska-Kangerluk", "Lieska-Leddu", "Lieska-Lie", "Lieska-Madukju", "Majava-Lie", "Navalauki", "Rika-Lie", "Takku", "Toivoa", "Uusipauki", "Villikauka"]
       }

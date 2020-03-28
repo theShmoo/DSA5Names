@@ -2,7 +2,7 @@ export const Nordmarken = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Altenfurt", "Barschengrund", "Ebersdorf", "Eisenhuett", "Eisenstein", "Eisenwacht", "Eisenwald", "Elenvina", "Firnholz", "Föhrenschild", "Graufurt", "Greifax", "Halwartshof", "Hardenfels", "Herrenwalde", "Ibenburg", "Kaldenberg", "Kranick", "Liepenstein", "Meilingen", "Nablafurt", "Nablafurten", "Quakenbrück", "Rabenstein", "Riedenburg", "Schleiffenröchte", "Schlüsselburg", "Schnakensee", "Schönwald", "Schweinsfold", "Schwertleihe", "Steinfels", "Sturmfels ä. H.", "Tandosch", "Tannwirk", "Tiefenthal", "Tsafelde", "Twergengrund", "Vairningen", "Weiseprein", "Weissenberg", "Wolfsstein"]}
       }

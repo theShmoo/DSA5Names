@@ -2,7 +2,7 @@ export const Garethien = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": {"x": ["von ", "zu "]},
+      "prefix": {"x": ["von", "zu"]},
       "names": {
         "x": ["Aarburg","Bärenau","vom Berg","Brachental","Dornensee","Dunkelschlund","Ehrenstein","Eisensteyn","Er­lenstamm","Falkenstein","Fronforst","Gareth","Goldweiler","Greyfenstein","Hartsteen","Hirschfurten","Hohenholz","Leu­enberg","Leuenfeld","Leuenfelde","Lichtenberg","Löwenthal","Löwental","Luring","Orkenschild","Quintian-Quandt","Rabenmund","Schilfweih","Schreyenfels","Schwarztannen","Streitzig j. H. Sturmfels","Sturzbach","Tannwirk","Ulmenhain","Zweifelfels"]
       }

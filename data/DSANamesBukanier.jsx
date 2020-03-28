@@ -3,15 +3,16 @@ export const Bukanier = {
     "name": "Piraten (lang)",
     "pre": {
       "prefix": {
-        "x": ["Aal-", "Abtakel-", "Abtritt-", "Achter-", "Affenfaust-", "Altoum-", "Anbohrer-", "Anker-", "Ausguck-", "Backbord-", "Barken-", "Beidreh-", "Belegnagel-", "Bilgen-", "Blut-", "Blutauge", "Blutaugen-", "Bootsmacher-", "Bordschwein-", "Boronstaucher-", "Brabacuda-", "Brisen-", "Bug-", "Charypso-", "Deckschrubber-", "Dublonen-", "Efferd-", "Einaugen-", "Einhand-", "Einschleicher-", "Entermesser-", "Filzlaus-", "Flaggen-", "Fusel-", "Geißel-", "Ghurenia-", "Gold-", "Goldzahn-", "Haken-", "Hakenhand-", "Hängematten-", "Harpunen-", "Heck-", "Holzbein-", "Hornissen-,Jungfer-", "Kaventsmann-", "Kenter-", "Kielhol-", "Kielwasser-", "Klabauter-", "Knoten-", "Koggen-", "Kutter-", "Landgang-", "Landratten-", "Leuchtfeuer-", "Meskinnes-", "Messer-", "Meuter-", "Muränen-", "Mützen-", "Nebel-", "Necker-", "Ohnezeh-", "Papageien-", "Peitschen-", "Perlen-", "Piranha-", "Planken-", "Plankentod-", "Prisen-", "Rochen-", "Rotzen-", "Ruder-", "Rum-", "Säbel-", "Schiffszwieback-", "Schnappes-", "Schnapps-", "Schuppen-", "Seegras-", "Seegurken-", "Silber-", "Smutje-", "Sprotten-", "Starkarm-", "Sterngucker", "Steuerbord-", "Stiefelriemen-", "Sylla-", "Takelagen-", "Tang-", "Tangfeld-", "Überbord-", "uthuria-", "Waldinsel-", "Windpinkler-", "Wogen-", "Wrack-", "Wudu-", "Zahnlücken", "Zauber-", "Zitter-", "Zossen-", "Zwinker-"]
+        "sep": ["-"],
+        "x": ["Aal", "Abtakel", "Abtritt", "Achter", "Affenfaust", "Altoum", "Anbohrer", "Anker", "Ausguck", "Backbord", "Barken", "Beidreh", "Belegnagel", "Bilgen", "Blut", "Blutauge", "Blutaugen", "Bootsmacher", "Bordschwein", "Boronstaucher", "Brabacuda", "Brisen", "Bug", "Charypso", "Deckschrubber", "Dublonen", "Efferd", "Einaugen", "Einhand", "Einschleicher", "Entermesser", "Filzlaus", "Flaggen", "Fusel", "Geißel", "Ghurenia", "Gold", "Goldzahn", "Haken", "Hakenhand", "Hängematten", "Harpunen", "Heck", "Holzbein", "Hornissen-,Jungfer", "Kaventsmann", "Kenter", "Kielhol", "Kielwasser", "Klabauter", "Knoten", "Koggen", "Kutter", "Landgang", "Landratten", "Leuchtfeuer", "Meskinnes", "Messer", "Meuter", "Muränen", "Mützen", "Nebel", "Necker", "Ohnezeh", "Papageien", "Peitschen", "Perlen", "Piranha", "Planken", "Plankentod", "Prisen", "Rochen", "Rotzen", "Ruder", "Rum", "Säbel", "Schiffszwieback", "Schnappes", "Schnapps", "Schuppen", "Seegras", "Seegurken", "Silber", "Smutje", "Sprotten", "Starkarm", "Sterngucker", "Steuerbord", "Stiefelriemen", "Sylla", "Takelagen", "Tang", "Tangfeld", "Überbord", "uthuria", "Waldinsel", "Windpinkler", "Wogen", "Wrack", "Wudu", "Zahnlücken", "Zauber", "Zitter", "Zossen", "Zwinker"]
       }
     }
   },
-
   "special": {
     "name": "Piraten (kurz)",
     "pre": {
       "prefix": {
+        "sep": [""],
         "x": ["Wogen", "Rot", "Schwarz", "Gold", "Eisen", "Muränen", "Blut", "Holz", "Planken", "Schlangen", "Gischt"]
       },
       "names": {

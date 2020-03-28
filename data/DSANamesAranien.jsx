@@ -3,7 +3,7 @@ export const Aranien = {
     "name": "Adel",
     "post": {
       "prefix": {
-       "x": ["von "]
+       "x": ["von"]
       },
       "postfix": {
        "x": ["ay", "ai"],

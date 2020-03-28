@@ -2,7 +2,7 @@ export const Perricum = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Bergthann", "Brendiltal", "Darpatbrück", "Dergelmund", "Firunslicht", "Gluckenhang", "Gnitzenkuhl", "Haselhain", "Leuentreu", "Paligan", "Pfiffenstock", "Sturmfels", "Trollforst", "Wasserburg", "Weidenhang"]
       }

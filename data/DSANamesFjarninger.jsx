@@ -12,7 +12,7 @@ export const Fjarninger = {
   "normal": {
     "name": "Bürger",
     "post": {
-      "prefix": {"x": ["von den "]},
+      "prefix": {"x": ["von den"]},
       "names": {
         "x": ["Bluttrinker-Leuten", "Doppelaxt-Leuten", "Eisbrecher-Leuten", "Eisfuchs-Leuten", "Firnklippen-Leuten", "Frostfeuer-Leuten", "Funkenglut-Leuten", "Grimmfrost-Leuten", "Schreiende-Schwerter-Leuten", "Sturmbrüller-Leuten"]
       }

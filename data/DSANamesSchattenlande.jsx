@@ -2,7 +2,7 @@ export const Schattenlande = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": {"x": ["von ", "zu "]},
+      "prefix": {"x": ["von", "zu"]},
       "names": {
         "x": ["Augstein", "Bebendorf", "Bergenhus", "Blutfelden", "Bregelsaum", "Burmisch", "Darbonia", "Dunkelstein", "Ebersfeld", "Ehrenstein", "Eichmoor", "Eisenrath", "Ellenforst", "Falkenstein", "Finsterried", "Freudenberg", "Granelfels", "Gebeinfeld", "Gerdenwald", "Kaltenalrik", "Kaltenstein", "Kathenberg", "Knochenhain", "Liliengrund", "Lindenhain", "Mittelleydingen", "Niederweyhe", "Schwarzsicheln", "Spogelsen", "Streitzig ä. H.", "Waischenroth", "Willbergen", "Wulfenfels"]
       }

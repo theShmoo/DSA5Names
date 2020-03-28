@@ -2,7 +2,7 @@ export const Sonnenmark = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Alst", "Bocksweiler", "Darbonia", "Dogulsfurt", "Drachenwehr", "Dunkelstein", "Ehrenstein", "Eisenrath", "Erlbrück", "Finstertann", "Fischbach", "Firunsschilfen", "Gabelweyhe", "Gerdenwald", "Gernotsborn", "Grünauen", "Isenborn", "Korswandt", "Nordweide", "Ogerbusch", "Radrombrücken", "Schafweide", "Schilfsend", "Schnattermoor", "Tirandur", "Treublatt", "Ulmenburg", "Wolfsruf", "Wulfenforst", "Wulfenthurm", "Yyoffrynn-Thama"]
       }

@@ -2,7 +2,7 @@ export const Warunk = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["von ", "zu "] },
+      "prefix": { "x": ["von", "zu"] },
       "names": {
         "x": ["Binsenbeck", "Bregelsaum", "Erlengrund", "Firunslicht", "Kaltenstein", "Natterngras", "Witzeney"]
       }

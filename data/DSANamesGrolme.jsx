@@ -7,13 +7,16 @@ export const Grolme = {
   "wichtig": {
     "name": "Wichtig, Wichtigtuer, Ausgestoßener",
     "second": { "names": [] },
-    "post": { "names": [] }
+    "pre": { "names": [], "prefix": {} }
   },
   "normal": {
     "name": "Diener",
     "pre": {
-      "prefix": {"x": names.m.concat(names.w)},
-      "names": {"x": ["s"]}
+      "prefix": {
+        "sep": [""],
+        "x": names.m.concat(names.w)
+      },
+      "names": {"x": ["s "]}
     },
     "second": {
       "names": {

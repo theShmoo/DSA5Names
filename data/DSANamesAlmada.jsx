@@ -2,7 +2,10 @@ export const Almada = {
   "nobility": {
     "name": "Adel",
     "post": {
-      "prefix": { "x": ["d'", "de ", "di ", "da ", "von ", "vom ", "zu ", "Al'"] },
+      "prefix": {
+        "sep": [""],
+        "x": ["d'", "de ", "di ", "da ", "von ", "vom ", "zu ", "Al'"]
+      },
       "names": {
         "x": ["Abundil", "Agum", "Amazetti", "Alcorta", "Faran", "Kasim", "Shirasgan", "Berg ä. H.", "Bleichenwang", "Braast", "Cavazaro", "Culming", "Artesa", "Ernathesa", "Eschgei­er", "Franfeld", "Harmamund", "Jurios", "Lacara", "Madja­ni", "Phexhilf-Rabenstein", "Ragathsquell", "Rastino", "Rebenthal", "Scheffelstein", "Streitzig ä. H.", "Taladur ä. H.", "Vanya", "Viryamun", "Zalfor"]}
       }
