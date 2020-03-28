@@ -53,8 +53,8 @@ class NamesMain extends React.Component {
   };
 
   componentDidMount() {
-    const {values} = parse(this.props.location.search);
-    if(!values || !values.h) {
+    const values = parse(this.props.location.search);
+    if(values === undefined || values.h === undefined) {
       this.randomize();
     }
   }
