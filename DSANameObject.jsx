@@ -37,6 +37,9 @@ import {Goblins} from './data/DSANamesGoblins';
 import {Orks} from './data/DSANamesOrks';
 import {Trolle} from './data/DSANamesTrolle';
 import {Ferkina} from './data/DSANamesFerkina';
+import {Echsen} from './data/DSANamesEchsen';
+import {Gjalsker} from './data/DSANamesGjalsker';
+import {Zwerge} from './data/DSANamesZwerge';
 
 export const Namen = [
   {"names": Garethien, "label": "Garethien", "path": "garethien", "region": "Zentrales Aventurien", "area": "Mittelreich", "race": "Mensch"},
@@ -73,25 +76,23 @@ export const Namen = [
   {"names": Zyklopeninseln, "label": "Zyklopeninseln (Zyklopäisch)", "path": "zyklopeninseln", "region": "Zentrales Aventurien", "area": "Horasreich", "race": "Mensch"},
   {"names": Zwoelfgoetter, "label": "Zwoelfgötternamen", "path": "zwoelfgoetter"},
   {"names": Elfen, "label": "Elfen (Asdharia, Asdharia)", "path": "elfen", "race": "Elfen"},
-  {"names": Waldmenschen, "path": "waldmenschen", "label": "Utulu (Puka-Puka) und Waldmenschenstämme (Mohisch)", "race": "Mensch", "area": "Stämme"},
-  {"names": Trolle, "path": "trolle", "label": "Trolle (Trollisch)", "race": "Trolle", "area": "Stämme"},
-  {"names": Ferkina, "path": "ferkina", "label": "Ferkinas", "race": "Mensch", "area": "Stämme"},
-  {"names": Orks, "path": "orks", "label": "Orks (Oloark, Ologhaijan)", "race": "Orks", "area": "Stämme"},
-  {"names": Goblins, "path": "goblins", "label": "Golbins (Goblinisch)", "race": "Goblins", "area": "Stämme"}
+  {"names": Waldmenschen, "path": "waldmenschen", "label": "Utulu (Puka-Puka) und Waldmenschenstämme (Mohisch)", "race": "Mensch", "area": "Stämme", "region": "Südliches Aventurien"},
+  {"names": Trolle, "path": "trolle", "label": "Trolle (Trollisch)", "race": "Trolle", "area": "Stämme", "region": "Nördliches Aventurien"},
+  {"names": Ferkina, "path": "ferkina", "label": "Ferkinas", "race": "Mensch", "area": "Stämme", "region": "Südliches Aventurien"},
+  {"names": Orks, "path": "orks", "label": "Orks (Oloark, Ologhaijan)", "race": "Orks", "area": "Stämme", "region": "Nördliches Aventurien"},
+  {"names": Goblins, "path": "goblins", "label": "Golbins (Goblinisch)", "race": "Goblins", "area": "Stämme"},
+  {"names": Echsen, "path": "echsen", "label": "Echsenmenschen (Rssah)", "region": "Südliches Aventurien", "race": "Echsen"},
+  {"names": Gjalsker, "path": "gjaslker", "label": "Gjalsker (Gjalskisch)", "region": "Nördliches Aventurien", "area": "Thorwal"},
+  {"names": Zwerge, "path": "zwerge", "label": "Zwerge (Angram)", "region": "Zentrals Aventuries", "area": "Zwerge", "race": "Zwerge"}
 ]
 
 const NOT_YET_IMPLEMENTED = [
     {"path": "alanfa", "label": "Al'Anfa & Tiefer Süden (Brabaci, Gatamo)"},
-  {"path": "gjasker", "label": "Gjaskerländer"},
   {"path": "horasreich", "label": "Horasreich (Horathi)"},
   {"path": "uthuria", "label": "Uthurische Modenamen (Dschuku, Nathani, Uthurisch)"},
   {"path": "maraskan", "label": "Maraskan (Maraskani, Ruuz)"},
-  {"path": "history", "label": "Historische Namen"},
   {"path": "thalusien", "label": "Thalusien (Tulamidya)"},
-  {"path": "maraskan", "label": "Maraskan"},
   {"path": "tulamidenlande", "label": "Tulamidenlande & Kalifat (Mahnadisch, Balashidisch, Tulamidya)"},
-  {"path": "echsen", "label": "Echsenmenschen (Rssah)"},
-  {"path": "zwerge", "label": "Zwerge (Angram)"},
   {"path": "kuenstler", "label": "Bühnen- & Künstlernamen"},
   {"path": "magier", "label": "Magier- & Weihennamen"}
 ]
