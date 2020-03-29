@@ -4,23 +4,11 @@ import queryString from 'query-string'
 import DSASelect from '../controls/DSASelect'
 import {DSAGridRow} from '../controls/DSAGrid'
 
-const Genders = [
-  {value: "m", label: "männlich"},
-  {value: "w", label: "weiblich"},
+export const Genders = [
   {value: "x", label: "egal"},
+  {value: "m", label: "männlich"},
+  {value: "w", label: "weiblich"}
 ]
-
-export const GenderChooser = (props) => {
-  const {gender, onChange} = props;
-  return(
-    <DSAGridRow>
-      <DSASelect options={Genders}
-        label="Geschlecht"
-        value={gender}
-        onChange={(e) => onChange(e.value)} />
-    </DSAGridRow>
-  );
-}
 
 export function sanitize(option, options, fallback) {
   if(options.includes(option))
@@ -29,20 +17,15 @@ export function sanitize(option, options, fallback) {
     return fallback;
 }
 
-export function sanitizeGenders(gender) {
-  return sanitize(gender, Genders.map(g => g.value), "x");
-}
-
-
 export const OptionChooser = (props) => {
-  const {options, option, onChange} = props;
+  const {options, option, label, onChange} = props;
   if(options.length === 1) {
     return "";
   }
   return(
     <DSAGridRow>
       <DSASelect options={options}
-        label="Wähle"
+        label={label ? label : "Wähle"}
         value={option}
         onChange={(e) => onChange(e.value)} />
     </DSAGridRow>

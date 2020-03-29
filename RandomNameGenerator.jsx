@@ -6,14 +6,35 @@ import {getRandomElement, getRandomIntInclusive} from '../utils/RandomUtils';
 
 const NUM_NAMES_TO_GENEREATE = 10;
 
-function generateNames(args, seed) {
+function getGender(part, gender) {
+  let retval = [];
+  if(part[gender]) {
+    retval.push(...part[gender]);
+  }
+  if(part.x){
+    retval.push(...part.x);
+  }
+  return retval;
+}
+
+function fixateGender(gender, seed) {
+  if(!gender || gender === 'x')
+    return getRandomElement(["m", "w"], seed);
+  else
+    return gender;
+}
+
+function generateNames(parts, gender, seed) {
     let names = []
     for(let i = 0; i < NUM_NAMES_TO_GENEREATE; ++i) {
-      const name = args.reduce((sum, a) => {
-        if(a && a.names.length > 0) {
+      const fixGender = fixateGender(gender, seed);
+      const name = parts.reduce((sum, a) => {
+        if(!a) return sum;
+        const names = getGender(a.names, fixGender);
+        if(names.length > 0) {
           const repeat = getRandomIntInclusive(a.repeat.from, a.repeat.to, seed);
           for (let i = 0; i < repeat; ++i) {
-            sum += getRandomElement(a.names, seed) + getRandomElement(a.sep, seed);
+            sum += getRandomElement(names, seed) + getRandomElement(a.sep, seed);
           }
           if(a.capitalize) {
             sum = sum.charAt(0).toUpperCase() + sum.slice(1);
@@ -26,45 +47,28 @@ function generateNames(args, seed) {
     return names;
 }
 
-function getGender(part, gender) {
-  let retval = []
-  if(!gender || gender === "x") {
-    if(part.m)
-      retval.push(...part.m);
-    if(part.w)
-      retval.push(...part.w);
-  }
-  else if(part[gender]) {
-    retval.push(...part[gender]);
-  }
-  if(part.x){
-    retval.push(...part.x);
-  }
-  return retval;
-}
-
-function sanitizePart(part, gender) {
+function sanitizePart(part) {
   const separator = part.sep ? part.sep : [" "];
   const repeat = part.repeat ? part.repeat : {"from": 1, "to": 1};
   const capitalize = part.capitalize ? part.capitalize : false;
-  return {sep: separator, names: getGender(part, gender), repeat: repeat, capitalize: capitalize};
+  return {sep: separator, names: part, repeat: repeat, capitalize: capitalize};
 }
 
-function generatePart(part, fallback, suffix, gender) {
+function generatePart(part, fallback, suffix) {
   if(part && part[suffix]) {
-    return sanitizePart(part[suffix], gender);
+    return sanitizePart(part[suffix]);
   }
   else if(fallback && fallback[suffix]){
-    return sanitizePart(fallback[suffix], gender);
+    return sanitizePart(fallback[suffix]);
   }
   return undefined;
 }
 
-function generatePartWithSuffix(part, fallback, gender) {
+function generatePartWithSuffix(part, fallback) {
   return [
-    generatePart(part, fallback, "prefix", gender),
-    generatePart(part, fallback, "names", gender),
-    generatePart(part, fallback, "postfix", gender)
+    generatePart(part, fallback, "prefix"),
+    generatePart(part, fallback, "names"),
+    generatePart(part, fallback, "postfix")
   ];
 }
 
@@ -78,10 +82,9 @@ const RandomNameGenerator = (props) => {
   }
   const parts = PARTS.map(part =>
     generatePartWithSuffix(names[option][part],
-      names[FALLBACK][part],
-      gender)
+      names[FALLBACK][part])
   ).flat(1);
-  const generatedNames = generateNames(parts, seed);
+  const generatedNames = generateNames(parts, gender, seed);
   const items = generatedNames.map(n => {
     return {value: n, action: nameRedirection(n)}
   });
