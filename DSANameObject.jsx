@@ -40,6 +40,10 @@ import {Ferkina} from './data/DSANamesFerkina';
 import {Echsen} from './data/DSANamesEchsen';
 import {Gjalsker} from './data/DSANamesGjalsker';
 import {Zwerge} from './data/DSANamesZwerge';
+import {Alanfa} from './data/DSANamesAlanfa';
+import {Horasreich} from './data/DSANamesHorasreich';
+import {Maraskan} from './data/DSANamesMaraskan';
+import {Uthuria} from './data/DSANamesUthuria';
 
 export const Namen = [
   {"names": Garethien, "label": "Garethien", "path": "garethien", "region": "Zentrales Aventurien", "area": "Mittelreich", "race": "Mensch"},
@@ -83,14 +87,15 @@ export const Namen = [
   {"names": Goblins, "path": "goblins", "label": "Golbins (Goblinisch)", "race": "Goblins", "area": "Stämme"},
   {"names": Echsen, "path": "echsen", "label": "Echsenmenschen (Rssah)", "region": "Südliches Aventurien", "race": "Echsen"},
   {"names": Gjalsker, "path": "gjaslker", "label": "Gjalsker (Gjalskisch)", "region": "Nördliches Aventurien", "area": "Thorwal"},
-  {"names": Zwerge, "path": "zwerge", "label": "Zwerge (Angram)", "region": "Zentrals Aventuries", "area": "Zwerge", "race": "Zwerge"}
+  {"names": Zwerge, "path": "zwerge", "label": "Zwerge (Angram)", "region": "Zentrales Aventurien", "area": "Zwerge", "race": "Zwerge"},
+  {"names": Alanfa, "path": "alanfa", "label": "Al'Anfa & Tiefer Süden (Brabaci, Gatamo)", "region": "Südliches Aventurien", "race": "Mensch", "area": "Al'Anfa"},
+  {"names": Horasreich, "path": "horasreich", "label": "Horasreich (Horathi)", "region": "Südliches Aventurien", "race": "Mensch", "area": "Horasreich"},
+   {"names": Maraskan, "path": "maraskan", "label": "Maraskan (Maraskani, Ruuz)", "region": "Maraksan", "race": "Mensch", "area": "Maraksan"},
+   {"names": Uthuria, "path": "uthuria", "label": "Uthurische Modenamen (Dschuku, Nathani, Uthurisch)", "region": "Uthuria", "race": "Mensch"},
 ]
 
 const NOT_YET_IMPLEMENTED = [
-    {"path": "alanfa", "label": "Al'Anfa & Tiefer Süden (Brabaci, Gatamo)"},
-  {"path": "horasreich", "label": "Horasreich (Horathi)"},
-  {"path": "uthuria", "label": "Uthurische Modenamen (Dschuku, Nathani, Uthurisch)"},
-  {"path": "maraskan", "label": "Maraskan (Maraskani, Ruuz)"},
+
   {"path": "thalusien", "label": "Thalusien (Tulamidya)"},
   {"path": "tulamidenlande", "label": "Tulamidenlande & Kalifat (Mahnadisch, Balashidisch, Tulamidya)"},
   {"path": "kuenstler", "label": "Bühnen- & Künstlernamen"},
