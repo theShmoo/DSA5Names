@@ -35,7 +35,6 @@ export const Aranien = {
         "w": femaleNames
       },
       "suffix": {
-        "sep": [""],
         "m": [["prefix", "names"]],
         "w": [["prefix", "names"], ["names", "postfix"]]
       },

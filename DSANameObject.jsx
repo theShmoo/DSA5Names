@@ -46,6 +46,8 @@ import {Maraskan} from './data/DSANamesMaraskan';
 import {Uthuria} from './data/DSANamesUthuria';
 import {Magier} from './data/DSANamesMagier';
 import {Kuenstler} from './data/DSANamesKuenstler';
+import {Thalusien} from './data/DSANamesThalusien';
+import {Tulamidenlande} from './data/DSANamesTulamidenlande';
 
 export const Namen = [
   {"names": Garethien, "label": "Garethien", "path": "garethien", "region": "Zentrales Aventurien", "area": "Mittelreich", "race": "Mensch"},
@@ -95,15 +97,10 @@ export const Namen = [
    {"names": Maraskan, "path": "maraskan", "label": "Maraskan (Maraskani, Ruuz)", "region": "Maraksan", "race": "Mensch", "area": "Maraksan"},
    {"names": Uthuria, "path": "uthuria", "label": "Uthurische Modenamen (Dschuku, Nathani, Uthurisch)", "region": "Uthuria", "race": "Mensch"},
   {"names": Kuenstler, "path": "kuenstler", "label": "Bühnen- & Künstlernamen", "race": "Mensch"},
-  {"names": Magier, "path": "magier", "label": "Magier- & Weihennamen", "race": "Mensch"}
-]
-
-const NOT_YET_IMPLEMENTED = [
-  {"path": "thalusien", "label": "Thalusien (Tulamidya)"},
-  {"path": "tulamidenlande", "label": "Tulamidenlande & Kalifat (Mahnadisch, Balashidisch, Tulamidya)"},
-  {"path": "kuenstler", "label": "Bühnen- & Künstlernamen"},
-  {"path": "magier", "label": "Magier- & Weihennamen"}
-]
+  {"names": Magier, "path": "magier", "label": "Magier- & Weihennamen", "race": "Mensch"},
+  {"names": Thalusien, "path": "thalusien", "label": "Thalusien (Tulamidya)", "race": "Mensch", "region": "Südliches Aventurien", "area": "Tulamidenlande" },
+  {"names": Tulamidenlande, "path": "tulamidenlande", "label": "Tulamidenlande & Kalifat (Mahnadisch, Balashidisch, Tulamidya)", "race": "Mensch", "region": "Südliches Aventurien", "area": "Tulamidenlande" }
+];
 
 export const Regions = Namen
       // only use unique values
