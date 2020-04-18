@@ -5,6 +5,9 @@ import DSAItemList from '../controls/DSAItemList';
 import {getRandomElement, getRandomIntInclusive} from '../utils/RandomUtils';
 
 const NUM_NAMES_TO_GENEREATE = 10;
+const SUFFIX = ["prefix", "names", "postfix"];
+const PARTS = ["pre", "second", "post"];
+const FALLBACK = "normal";
 
 function getGender(part, gender) {
   let retval = [];
@@ -24,23 +27,28 @@ function fixateGender(gender, seed) {
     return gender;
 }
 
-function generateNames(parts, gender, seed) {
+function generateNames(all_parts, gender, seed) {
     let names = []
     for(let i = 0; i < NUM_NAMES_TO_GENEREATE; ++i) {
       const fixGender = fixateGender(gender, seed);
-      const name = parts.reduce((sum, a) => {
-        if(!a) return sum;
-        const names = getGender(a.names, fixGender);
-        if(names.length > 0) {
-          const repeat = getRandomIntInclusive(a.repeat.from, a.repeat.to, seed);
-          for (let i = 0; i < repeat; ++i) {
-            sum += getRandomElement(names, seed) + getRandomElement(a.sep, seed);
+      const name = all_parts.reduce((all_sum, a) => {
+        const {suffix, parts} = a
+        const chosenSuffices = getRandomElement(getGender(suffix, fixGender), seed);
+        return chosenSuffices.reduce((sum, suf) => {
+          const a = parts[suf];
+          if(!a) return sum;
+          const names = getGender(a.names, fixGender);
+          if(names.length > 0) {
+            const repeat = getRandomIntInclusive(a.repeat.from, a.repeat.to, seed);
+            for (let i = 0; i < repeat; ++i) {
+              sum += getRandomElement(names, seed) + getRandomElement(a.sep, seed);
+            }
+            if(a.capitalize) {
+              sum = sum.charAt(0).toUpperCase() + sum.slice(1);
+            }
           }
-          if(a.capitalize) {
-            sum = sum.charAt(0).toUpperCase() + sum.slice(1);
-          }
-        }
-        return sum;
+          return sum;
+        }, all_sum);
       }, "");
       names.push(name);
     }
@@ -64,26 +72,36 @@ function generatePart(part, fallback, suffix) {
   return undefined;
 }
 
-function generatePartWithSuffix(part, fallback) {
-  return [
-    generatePart(part, fallback, "prefix"),
-    generatePart(part, fallback, "names"),
-    generatePart(part, fallback, "postfix")
-  ];
+function getSuffix(part, fallback) {
+  if(part && part.suffix) {
+    return part.suffix;
+  }
+  else if(fallback && fallback.suffix) {
+   return fallback.suffix;
+  }
+  return {x: [SUFFIX]};
 }
 
-const PARTS = ["pre", "second", "post"];
-const FALLBACK = "normal";
+function generatePartWithSuffix(part, fallback) {
+  return {
+    suffix: getSuffix(part, fallback),
+    parts: SUFFIX.reduce((o, s) => (
+      { ...o, [s]: generatePart(part, fallback, s)}), {})
+  };
+}
 
 const RandomNameGenerator = (props) => {
   const {gender, region, onNameChosen, names, option, seed} = props;
+
   const nameRedirection = (n) => (e) => {
     onNameChosen(n);
   }
-  const parts = PARTS.map(part =>
-    generatePartWithSuffix(names[option][part],
-      names[FALLBACK][part])
-  ).flat(1);
+
+  const parts = PARTS.map(
+    part => generatePartWithSuffix(names[option][part],
+                                   names[FALLBACK][part])
+  )
+
   const generatedNames = generateNames(parts, gender, seed);
   const items = generatedNames.map(n => {
     return {value: n, action: nameRedirection(n)}
