@@ -43,15 +43,15 @@ const DSANameFilter = (props) => {
 
   const regionOptions = getFilteredBy(Namen, "region", ["area", "race"], filter).map(r => {
     return {value: r, "label": r}
-  })
+  });
 
   const areaOptions = getFilteredBy(Namen, "area", ["region", "race"], filter).map(r => {
     return {value: r, "label": r}
-  })
+  });
 
   const raceOptions = getFilteredBy(Namen, "race", ["region", "area"], filter).map(r => {
     return {value: r, "label": r}
-  })
+  });
 
   const options = filteredNames.map(a => {
     return {value: ROOT_PATH + a.path, label: a.label};
